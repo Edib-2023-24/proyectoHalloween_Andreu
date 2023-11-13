@@ -8,12 +8,96 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: "Plasma-Drip";
+  src: url("../font/plasdrip-webfont.woff2") format("woff2"),
+    url("../font/plasdrip-webfont.woff") format("woff");
 }
-
-/* ******************************** */
 
 /* Colores */
 
-/* ******************************** */
+:root {
+  --degradado-letras: linear-gradient(180deg, #d9c116 7.19%, #f25c05 28.54%);
+}
+
+body {
+  @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) {
+    @media (-webkit-min-device-pixel-ratio: 1) {
+      background-image: url(../img/smartphone/fondo.webp);
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url(../img/smartphone/fondo@2x.webp);
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 3) {
+      background-image: url(../img/smartphone/fondo@3x.webp);
+    }
+  }
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  .container {
+    width: 100%;
+    height: 100vh;
+
+    & main {
+      width: max(450px, 100%);
+      height: 100vh;
+
+      display: grid;
+      grid-template-rows: repeat(8, 100px);
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 10px;
+      column-gap: 20px;
+
+      & h1,
+      h4,
+      h5 {
+        font-family: "Plasma-Drip";
+        background: var(--degradado-letras);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      & .paypal {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+      }
+
+      & .titulo {
+        grid-row: 2/4;
+        grid-column: 1/-1;
+
+        font-family: "Plasma-Drip";
+        font-size: 30px;
+
+        text-transform: uppercase;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & .dias,
+      .horas,
+      .minutos,
+      .segundos {
+        font-size: 80px;
+        text-align: right;
+        justify-self: end;
+
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      & h5{
+        font-size: 30px;
+   
+        align-self: center;
+      }
+    }
+  }
+}
