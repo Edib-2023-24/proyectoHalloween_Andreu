@@ -97,8 +97,28 @@ body {
 
         align-self: center;
       }
+
+      & .mensaje-final {
+        grid-column: 1/-1;
+        grid-row: 4/6;
+
+        font-family: "Plasma-Drip";
+        font-size: 55px;
+        text-align: center;
+        text-transform: uppercase;
+
+        & span:first-child {
+          background: var(--degradado-letras);
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+
+        & span:last-child {
+          background: var(--degradado-letras);
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      }
     }
   }
-  
-  
 }
